@@ -27,12 +27,19 @@ export function TasksSection() {
   const [successMessage, setSuccessMessage] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedDateline, setSelectedDateline] = useState<Date | undefined>(undefined)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    description: string
+    projectId: string
+    userId: string
+    status: Task['status']
+    priority: Task['priority']
+    dateline: string
+  }>({
     description: '',
     projectId: '',
     userId: '',
-    status: 'To Do' as const,
-    priority: 'Medium' as const,
+    status: 'To Do',
+    priority: 'Medium',
     dateline: '',
   })
 

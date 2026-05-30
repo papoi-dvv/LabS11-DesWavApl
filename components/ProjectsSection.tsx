@@ -24,12 +24,18 @@ export function ProjectsSection() {
   const [deleteProjectId, setDeleteProjectId] = useState<string | null>(null)
   const [error, setError] = useState('')
   const [successMessage, setSuccessMessage] = useState('')
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    title: string
+    description: string
+    status: Project['status']
+    progress: number
+    teamMemberIds: string[]
+  }>({
     title: '',
     description: '',
-    status: 'Planificado' as const,
+    status: 'Planificado',
     progress: 0,
-    teamMemberIds: [] as string[],
+    teamMemberIds: [],
   })
 
   const handleOpenChange = (open: boolean) => {

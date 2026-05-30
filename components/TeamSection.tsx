@@ -25,14 +25,23 @@ export function TeamSection() {
   const [error, setError] = useState('')
   const [successMessage, setSuccessMessage] = useState('')
   const [selectedBirthdate, setSelectedBirthdate] = useState<Date | undefined>(undefined)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string
+    email: string
+    position: string
+    role: TeamMember['role']
+    birthdate: string
+    phone: string
+    projectIds: string[]
+    isActive: boolean
+  }>({
     name: '',
     email: '',
     position: '',
-    role: 'Developer' as const,
+    role: 'Developer',
     birthdate: '',
     phone: '',
-    projectIds: [] as string[],
+    projectIds: [],
     isActive: true,
   })
 
